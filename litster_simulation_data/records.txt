@@ -1,0 +1,13 @@
+tried methods : 
+1. nB = 4,7 nt =3,4 
+2. gassuain corvar of inputs: diag, full 
+3. train feature * 10 : looks better?
+
+Problem: 
+1. quick purge makes N2_concentration drops quickly (Consider Binarilize it)  
+2. Three problem: 1. no purge phase 2. purge phase 3. time accumulation effect 
+3. Prediction states: always 3 
+4. Data preprocess: PCA leads to feature_2 always very large 
+
+Try: 
+1. Add a discrete input node to mimic purge 

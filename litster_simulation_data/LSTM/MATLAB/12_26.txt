@@ -1,0 +1,10 @@
+LSTM:
+1. Test sine wave and accumulated sine wave (MATLAB)
+2. Test regular inputs for Shawn's data set (MATLAB)
+3. Tried LSTM seq 2 seq, still averaging (MATLAB) 
+4. Tried LSTM on N2_diff 
+5. Tried add time (not good)
+
+data analysis: 
+1. looked at N2 vs features
+2. looked at features (includes N2) v.s time 

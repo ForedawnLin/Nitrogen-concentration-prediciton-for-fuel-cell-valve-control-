@@ -1,0 +1,33 @@
+
+
+fileName='SAIC_Purging_Simulation_n2.xlsx'; 
+M=readtable(fileName); 
+
+%%%% organize data %%% 
+table_size=size(M);
+X_feature=table_size(2); %%% didn't include data (first coln) 
+data_num=table_size(1); %%% total number of data 
+data=M{:,:};
+%%%%%% sampling the frequency %%%%%%%% 
+sample_freq=0.05;
+time_resample=0:sample_freq:data(end,1)';
+data_num_us=length(time_resample); 
+data_us=zeros(data_num_us,X_feature)
+for i=1:X_feature
+    if i==1
+        data_us(i,:)=time_resample
+    else
+        data_us(i,:)=interp1(data(:,1),data(:,i),0:sample_freq:data(end,1)); %%% upsampling feature
+    end  
+end 
+
+
+
+
+
+% figure (1)
+% plot(data(:,1),data(:,end),'o-')
+% 
+% 
+% figure (2)
+% plot(0:sample_freq:data(end,1),value,'o-r')

@@ -1,3 +1,4 @@
 *.png 
 *.jpg
 *.zip
+litster_simulation_data\LSTM\MATLAB\checkpoint\*.mat

@@ -1,0 +1,2 @@
+1.try multiple outputs loss 
+2. Check why LSTM outputs are -1,0,1 only
