@@ -2,13 +2,13 @@ clc
 clear all 
 
 %% load train data %%%
-fileName_train='data/SAIC_Purging_Simulation_n2.xlsx'; 
+fileName_train='../../data/SAIC_Purging_Simulation_n2.xlsx'; 
 M_train=readtable(fileName_train);
 train_data=M_train{:,:};
 
 
 %% load test data %%%
-fileName_test='data/SAIC_Purging_Simulation_n3.xlsx'; 
+fileName_test='../../data/SAIC_Purging_Simulation_n3.xlsx'; 
 M_test=readtable(fileName_test);
 test_data=M_test{:,:};
 
@@ -94,7 +94,7 @@ end
 
 
 %%%% train LSTM %%%% 
-maxEpochs = 500; %% 50
+maxEpochs = 1; %% 50
 miniBatchSize = 64;
 
 numFeatures = 7;

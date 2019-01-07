@@ -37,28 +37,5 @@ classdef relation
           N2=sqrt(a*c_diff/Di*(sqrt(H2_dot)+air_dot^(1/3))+b/Di^2*c_diff^(4/3))
       end 
       
-      function N2=time_correlation(relation,N2_previous,N2_current)
-          %%% N2_current: genreatd by generation_Static
-          N2=N2_previous+N2_current 
-      end 
-      
-      
-      function N2_seq=data_generation_pipeline(relation,data_num,H2O,T,C_N2C,C_N2A,P_H2,P_air)
-          N2=zeros(1,data_num); 
-          spike_freq=0.05 ; %%% 5% of data have unresonable spike (to be continuoued, not used yet)
-          
-          for i=1:data_num 
-              if i==1
-                  N2(i)=relation.data_generation_static(H2O,T,C_N2C,C_N2A,P_H2,P_air);
-                  N2(i)=N2(i)+randn(1)*N2(i); %%% add gaussian noise 
-              else
-                  N2(i)=relation.data_generation_static(H2O,T,C_N2C,C_N2A,P_H2,P_air);
-                  N2(i)=N2(i)+randn(1)*N2(i);  %%% add gaussian noise 
-                  N2(i)=relation.time_correlation(N2(i-1),N2)+wgn(1,1,N2(i)); %%%% time correlaition + wgn noise 
-              end 
-          end 
-          N2_seq=N2;
-      end 
-      
    end
 end
